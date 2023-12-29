@@ -1,4 +1,4 @@
-function displayCard (element) {
+function displayCard(element) {
     element.style.display = "block";
     element.scrollIntoView();
 }
@@ -12,11 +12,11 @@ function displayCard (element) {
  * Retour :
  */
 
-function displayArray (tab) {
-    let element = document.getElementById ('result');
-    displayCard (element);
+function displayArray(tab) {
+    let element = document.getElementById('result');
+    displayCard(element);
     let out = '<table class="display">\n<tr>\n';
-    tab.forEach ((item, index) => {
+    tab.forEach((item, index) => {
         out += '<td class="border-blue">' + item + '</td>\n';
     });
     out += '</tr>\n</table>\n';
@@ -34,9 +34,9 @@ function displayArray (tab) {
  * Retour :
  */
 
-function displayResult (message, result) {
-    let element = document.getElementById ('result');
-    displayCard (element);
+function displayResult(message, result) {
+    let element = document.getElementById('result');
+    displayCard(element);
     let out = '<table class="display">\n<tr>\n<td>';
     out += (message + " " + result);
     out += '</td></tr>\n</table>\n</div>';
@@ -52,7 +52,7 @@ function displayResult (message, result) {
  * Retour : un nombre entier entre le min et le max choisis.
  */
 
-function randomIntFromInterval (min, max) { // min and max included 
+function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -65,11 +65,21 @@ function randomIntFromInterval (min, max) { // min and max included
  * Retour : un tableau (Array) de nombres entiers entre le min et le max choisis.
  */
 
-function randomArrayOfIntFromInterval (n, min, max) { // min and max included 
+function randomArrayOfIntFromInterval(n, min, max) { // min and max included 
     let tab = [];
-    for (let i=0; i<n; i++) {
-        tab.push(randomIntFromInterval (min, max));
+    for (let i = 0; i < n; i++) {
+        tab.push(randomIntFromInterval(min, max));
     }
     return (tab);
 }
 
+/*
+ * En fonction du modulo d'une valeur, renvoi son cube ou son carré
+*/
+function cube(n) {
+    if (n % 2 == 0)
+        return (n * n * n);
+
+    else
+        return (n * n);
+}
